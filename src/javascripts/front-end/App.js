@@ -2,6 +2,13 @@ import React, { createContext, useState } from "react"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import { TableOfHobbies } from "./week02/TableOfHobbies"
 import { GitHub } from "./week03/GitHub"
+import { FormsData } from "./week05/FormsData"
+import { FormsList } from "./week05/FormsList"
+import { UncontrolledForm } from "./week05/UncontrolledForm"
+import { toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
+
+toast.configure()
 
 export const InClassContext = createContext()
 
@@ -28,6 +35,7 @@ export function App() {
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a className="dropdown-item" href="/week02">Week 02: Table of hobbies</a></li>
                   <li><a className="dropdown-item" href="/week03">Week 03: GitHub Users</a></li>
+                  <li><a className="dropdown-item" href="/week05/forms">Week 05: Forms</a></li>
                 </ul>
               </li>
             </ul>
@@ -38,8 +46,25 @@ export function App() {
         <Routes>
           <Route path="/week02" element={<TableOfHobbies></TableOfHobbies>}></Route>
           <Route path="/week03" element={<GitHub/>}></Route>
+          <Route path="/week05/forms" element={<FormsData/>}>
+            <Route index element={<FormsList/>}></Route>
+            <Route path="uncontrolled" element={<UncontrolledForm/>}></Route>
+            {/* <Route path="controlled" element={<ControlledForm/>}></Route>
+            <Route path="formik" element={<FormikForm/>}></Route> */}
+          </Route>
         </Routes>
       </Router>
     </InClassContext.Provider>
   )
 }
+
+/*
+
+/week05/forms
+    /               index
+    /uncontrolled   uncontrolled form
+    /controlled     controlled form 
+    /formik         controlled form using formik
+
+
+*/
