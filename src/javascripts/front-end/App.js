@@ -6,7 +6,13 @@ import { FormsData } from "./week05/FormsData"
 import { FormsList } from "./week05/FormsList"
 import { UncontrolledForm } from "./week05/UncontrolledForm"
 import { toast } from "react-toastify"
+import { ControlledForm } from "./week05/ControlledForm"
+import { FormikForm } from "./week05/FormikForm"
+
 import 'react-toastify/dist/ReactToastify.css'
+import 'react-datepicker/dist/react-datepicker.css'
+import { GitHubList } from "./week06/GitHubList"
+import { GitHubData } from "./week06/GitHubData"
 
 toast.configure()
 
@@ -36,6 +42,7 @@ export function App() {
                   <li><a className="dropdown-item" href="/week02">Week 02: Table of hobbies</a></li>
                   <li><a className="dropdown-item" href="/week03">Week 03: GitHub Users</a></li>
                   <li><a className="dropdown-item" href="/week05/forms">Week 05: Forms</a></li>
+                  <li><a className="dropdown-item" href="/week06/github/0">Week 06: Parametrized GitHub Users</a></li>
                 </ul>
               </li>
             </ul>
@@ -49,8 +56,11 @@ export function App() {
           <Route path="/week05/forms" element={<FormsData/>}>
             <Route index element={<FormsList/>}></Route>
             <Route path="uncontrolled" element={<UncontrolledForm/>}></Route>
-            {/* <Route path="controlled" element={<ControlledForm/>}></Route>
-            <Route path="formik" element={<FormikForm/>}></Route> */}
+            <Route path="controlled" element={<ControlledForm/>}></Route>
+            <Route path="formik" element={<FormikForm/>}></Route> 
+          </Route>
+          <Route path="/week06/github/:uid" element={<GitHubData/>}>
+            <Route index element={<GitHubList/>}/>
           </Route>
         </Routes>
       </Router>

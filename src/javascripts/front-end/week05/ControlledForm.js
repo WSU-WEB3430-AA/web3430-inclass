@@ -27,7 +27,7 @@ export function ControlledForm(){
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
-        <h1>Example uncontrolled form</h1>
+        <h1>Example controlled form</h1>
         <div className="mb-3 row">
           <label htmlFor="year" className="form-label col-sm-2 text-end">
             <strong>Year</strong>
