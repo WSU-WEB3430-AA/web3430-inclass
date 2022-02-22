@@ -19,45 +19,41 @@ toast.configure()
 
 export const InClassContext = createContext()
 
-function Welcome(){
-  return <h3>Welcome</h3>
-}
-
 export function App() {
   let [secret, setSecret] = useState(987)
 
   return (
     <InClassContext.Provider value={{secret}}>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">WEB 3430</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a className="dropdown-item" href="/week02">Week 02: Table of hobbies</a></li>
-                  <li><a className="dropdown-item" href="/week03">Week 03: GitHub Users</a></li>
-                  <li><a className="dropdown-item" href="/week05/forms">Week 05: Forms</a></li>
-                  <li><a className="dropdown-item" href="/week06/github/0">Week 06: Parametrized GitHub Users</a></li>
-                  <li><a className="dropdown-item" href="/week07/modal">Week 07: Modal Dialog</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
       <Router>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <div className="container-fluid">
+            <a className="navbar-brand" href="#">WEB 3430</a>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <a className="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><Link className="dropdown-item" to="/week02">Week 02: Table of hobbies</Link></li>
+                    <li><Link className="dropdown-item" to="/week03">Week 03: GitHub Users</Link></li>
+                    <li><Link className="dropdown-item" to="/week05/forms">Week 05: Forms</Link></li>
+                    <li><Link className="dropdown-item" to="/week06/github/0">Week 06: Parametrized GitHub Users</Link></li>
+                    <li><Link className="dropdown-item" to="/week07/modal">Week 07: Modal Dialog</Link></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
         <Routes>
-        <Route path="/" element={<Welcome/>}></Route>
           <Route path="/week02" element={<TableOfHobbies></TableOfHobbies>}></Route>
           <Route path="/week03" element={<GitHub/>}></Route>
           <Route path="/week05/forms" element={<FormsData/>}>
