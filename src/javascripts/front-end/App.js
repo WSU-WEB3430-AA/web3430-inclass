@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import 'react-datepicker/dist/react-datepicker.css'
 import { GitHubList } from "./week06/GitHubList"
 import { GitHubData } from "./week06/GitHubData"
+import { ModalDialog } from "./week07/ModalDialog"
 
 toast.configure()
 
@@ -43,6 +44,7 @@ export function App() {
                   <li><a className="dropdown-item" href="/week03">Week 03: GitHub Users</a></li>
                   <li><a className="dropdown-item" href="/week05/forms">Week 05: Forms</a></li>
                   <li><a className="dropdown-item" href="/week06/github/0">Week 06: Parametrized GitHub Users</a></li>
+                  <li><a className="dropdown-item" href="/week07/modal">Week 07: Modal Dialog</a></li>
                 </ul>
               </li>
             </ul>
@@ -62,6 +64,7 @@ export function App() {
           <Route path="/week06/github/:uid" element={<GitHubData/>}>
             <Route index element={<GitHubList/>}/>
           </Route>
+          <Route path="/week07/modal" element={<ModalDialog/>}></Route>
         </Routes>
       </Router>
     </InClassContext.Provider>
