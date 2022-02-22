@@ -19,6 +19,10 @@ toast.configure()
 
 export const InClassContext = createContext()
 
+function Welcome(){
+  return <h3>Welcome</h3>
+}
+
 export function App() {
   let [secret, setSecret] = useState(987)
 
@@ -53,6 +57,7 @@ export function App() {
       </nav>
       <Router>
         <Routes>
+        <Route path="/" element={<Welcome/>}></Route>
           <Route path="/week02" element={<TableOfHobbies></TableOfHobbies>}></Route>
           <Route path="/week03" element={<GitHub/>}></Route>
           <Route path="/week05/forms" element={<FormsData/>}>
